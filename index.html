@@ -7,20 +7,50 @@
 
     <!-- CSS External -->
     <link rel="stylesheet" href="css\style.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
 
     <!-- Header Section -->
-     <header></header>
-     
+     <header>
+        <h1 class="text-4xl font-bold"> To do List!</h1>
+     </header>
+
     <!-- Main Section -->
-     <main></main>
+     <main>
+        <section id="input-section" class="py-3">
+            <form class="flex gap-2" id="task-form">
+                <input type="text" class="border-2 border-solid rounded-lg" id="task-input" placeholder=" Enter a new task" required>
+            <input type="date" class="border-2 border-solid rounded-lg" id="task-date-input" placeholder=" Enter a due date" required>
+            <button id="add-task-btn" class="rounded-lg bg-cyan-500 shadow-md shadow-cyan-500/50 px-3 py-1"> Add Task</button>
+            </form> 
+            <div id="error-message" class="error-message"></div>
+        </section>
+        <section id="button-section" class="flex justify-between py-1">
+        <button id="add-task-btn" class="rounded-lg bg-cyan-500 shadow-md shadow-cyan-500/50 px-3 py-1"></buttonid>
+            Filter
+        </button>
+        
+        <button id="add-task-btn" class="rounded-lg bg-cyan-500 shadow-md shadow-cyan-500/50 px-3 py-1">
+            Delete All
+        </button>
+        </section>
+
+        <!-- To do list section -->
+         <section class="py-[10py]">
+            <h1 class="text-xl font-semibold py-1">List of To do</h1>
+            <ul id="todo-list" class="text-center">
+                <p>No task added yet.</p>
+            </ul>
+        
+     </main>
 
     <!-- Footer Section -->
-     <footer></footer>
-    
-    <h1>Hello, World!</h1>
-    <p>This is a sample HTML document.</p>
+     <footer>
+        <p class="py-4">Copyright &copy; 2024 Danvi</p>
+     </footer>
 
     <!-- JavaScript External -->
     <script src="js\script.js"></script>
