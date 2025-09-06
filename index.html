@@ -20,36 +20,53 @@
 
     <!-- Main Section -->
      <main>
-        <section id="input-section" class="py-3">
-            <form class="flex gap-2" id="task-form">
-                <input type="text" class="border-2 border-solid rounded-lg" id="task-input" placeholder=" Enter a new task" required>
-            <input type="date" class="border-2 border-solid rounded-lg" id="task-date-input" placeholder=" Enter a due date" required>
-            <button id="add-task-btn" class="rounded-lg bg-cyan-500 shadow-md shadow-cyan-500/50 px-3 py-1"> Add Task</button>
+        <div class="todo-container mx-auto mt-8 p-8 bg-white rounded-lg shadow-lg border-4 border-cyan-700 max-w-2xl">
+        <section id="input-section" class="py-1">
+            <form class="flex flex-wrap gap-3 w-full" id="task-form">
+                <input type="text" class="border-2 border-solid rounded-lg flex-1 min-w-0" id="task-input" placeholder=" Enter a new task" required>
+            <input type="date" class="border-2 border-solid rounded-lg w-40 min-w-0" id="task-date-input" placeholder=" Enter a due date" required>
+            <button type="button" id="add-task-btn" onclick="validateInput();" class="rounded-lg font-semibold bg-cyan-500 shadow-md shadow-cyan-500/50 px-3 py-1 w-32 min-w-0"> Add Task</button>
             </form> 
             <div id="error-message" class="error-message"></div>
         </section>
-        <section id="button-section" class="flex justify-between py-1">
-        <button id="add-task-btn" class="rounded-lg bg-cyan-500 shadow-md shadow-cyan-500/50 px-3 py-1"></buttonid>
-            Filter
-        </button>
+        <section id="button-section" class="flex justify-between py-3">
+        <select id="filter-status" class="rounded-lg bg-cyan-500 shadow-md shadow-cyan-500/50 px-3 py-1 w-32 min-w-0" onchange="filterTasks()">
+        <option value="filter">Filter</option>
+        <option value="all">All</option>
+        <option value="pending">Pending</option>
+        <option value="complete">Complete</option>
+    </select>
         
-        <button id="add-task-btn" class="rounded-lg bg-cyan-500 shadow-md shadow-cyan-500/50 px-3 py-1">
+        <button id="deleteAllTasks" class="rounded-lg font-semibold bg-cyan-500 shadow-md shadow-cyan-500/50 px-3 py-1 w-32 min-w-0" onclick="deleteAllTasks();">
             Delete All
         </button>
         </section>
 
         <!-- To do list section -->
          <section class="py-[10py]">
-            <h1 class="text-xl font-semibold py-1">List of To do</h1>
-            <ul id="todo-list" class="text-center">
-                <p>No task added yet.</p>
-            </ul>
-        
+            <h1 class="text-xl font-semibold mt-4 mb-3">List of To do</h1>
+    <table id="todo-list" class="min-w-full border text-center">
+        <thead>
+            <tr class="bg-cyan-100">
+                <th class="border px-2 py-1">No</th>
+                <th class="border px-2 py-1">Task</th>
+                <th class="border px-2 py-1">Due Date</th>
+                <th class="border px-2 py-1">Status</th>
+                <th class="border px-2 py-1">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="5" class="border px-2 py-1">No task added yet.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
      </main>
 
     <!-- Footer Section -->
      <footer>
-        <p class="py-4">Copyright &copy; 2024 Danvi</p>
+        <p class="py-4">Copyright &copy; 2024 Danvisrz</p>
      </footer>
 
     <!-- JavaScript External -->

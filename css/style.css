@@ -1,4 +1,42 @@
 body{
-place-items: center;
+    justify-items: center;
+    background-color: lightblue;
     height: 100vh;
-    align-content: center;}
+    align-content: center;
+}
+.todo-container {
+    border: 4px solid #0e7490; /* cyan-700 */
+    border-radius: 16px;
+    background: #e8f5fa91;
+    box-shadow: 0 4px 24px #0e7490;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 32px;
+}
+
+h1 {
+    color: #0e7490; /* cyan-700 */
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="text"] {
+    border: 2px solid #0e7490; 
+    border-radius: 8px;
+    padding: 8px;
+    width: 70%;
+    font-size: 16px;
+}
+
+input[type=date] {
+    border: 2px solid #0e7490; 
+    border-radius: 8px;
+    padding: 8px;
+    width: 30%;
+    font-size: 16px;
+}
